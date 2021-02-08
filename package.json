@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "update-libs": "npm update; cp node_modules/downloadjs/download.min.js lib/; cp node_modules/pdf-lib/dist/pdf-lib.min.js lib/;",
+    "update-libs": "npm update; mkdir -p lib/downloadjs;cp node_modules/downloadjs/download.min.js lib/downloadjs/; cp node_modules/downloadjs/LICENSE.md lib/downloadjs/; mkdir -p lib/pdf-lib;cp node_modules/pdf-lib/dist/pdf-lib.min.js lib/pdf-lib/;cp node_modules/pdf-lib/LICENSE.md lib/pdf-lib/;",
     "build": "mkdir -p build; cp lib build/ -r; cp src/* build/; cp static build/ -r;",
     "serve": "npm run build; node_modules/light-server/bin/light-server -o -s build -w \"src/**/*.js, src/**/*.html # npm run build\"; rm build -rf;"
   },
