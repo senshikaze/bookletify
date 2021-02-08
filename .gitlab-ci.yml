@@ -3,7 +3,11 @@ image: alpine:latest
 pages:
   stage: deploy
   script:
-  - echo 'Nothing to do...'
+    - rm public -rf
+    - mkdir public
+    - cp -r src/* public
+    - cp -r lib public/
+    - cp -r static public/
   artifacts:
     paths:
     - public

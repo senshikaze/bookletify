@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "update-libs": "npm update; cp node_modules/downloadjs/download.min.js lib/; cp node_modules/pdf-lib/dist/pdf-lib.min.js lib/;",
+    "build": "mkdir -p build; cp lib build/ -r; cp src/* build/; cp static build/ -r;",
+    "serve": "npm run build; node_modules/light-server/bin/light-server -o -s build -w \"src/**/*.js, src/**/*.html # npm run build\"; rm build -rf;"
+  },
+  "devDependencies": {
+    "downloadjs": "^1.4.7",
+    "light-server": "^2.9.1",
+    "pdf-lib": "^1.16.0"
+  }
+}

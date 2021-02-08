@@ -2,17 +2,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <script src="./download.js"></script>
-    <script src="./pdf-lib.js"></script>
+    <script src="./lib/download.min.js"></script>
+    <script src="./lib/pdf-lib.min.js"></script>
     <script src="./index.js"></script>
-    <link rel = "stylesheet" type = "text/css" href = "./a11yana.css">
+    <link rel = "stylesheet" type = "text/css" href = "./static/a11yana.css">
 </head>
 
 <body>
     <h1>Bookletify</h1>
     <p>Convert a pdf to a printable booklet layout.</p>
     <p><label><input id="lastpage" type="checkbox" checked="checked"> Last page is a cover page.</label></p>
-    <p><input id="pdf-file" type="file" accept="application/pdf" /></p>
+    <p><input id="pdf-file" type="file" accept="application/pdf" ></p>
     <p id="convering" style="visibility: hidden;">Converting...</p>
 
     <h3>What it does</h3>
@@ -28,35 +28,35 @@
                 <rect x="10" y="90" width="50" height="70" />
                 <rect x="10" y="170" width="50" height="70" />
                 <rect x="10" y="250" width="50" height="70" />
-
+        
                 <rect x="160" y="10" width="50" height="70" />
                 <rect x="160" y="90" width="50" height="70" />
                 <rect x="160" y="170" width="50" height="70" />
                 <rect x="160" y="250" width="50" height="70" />
-
+        
                 <rect x="210" y="10" width="50" height="70" />
                 <rect x="210" y="90" width="50" height="70" />
                 <rect x="210" y="170" width="50" height="70" />
                 <rect x="210" y="250" width="50" height="70" />
             </g>
-
+        
             <g text-anchor="middle" dominant-baseline="middle">
                 <text x="35" y ="45">1</text>
                 <text x="35" y ="125">2</text>
                 <text x="35" y ="205">...</text>
                 <text x="35" y ="285">7</text>
-
+        
                 <text x="185" y ="45">7</text>
                 <text x="185" y ="125">2</text>
                 <text x="185" y ="205">6</text>
                 <text x="185" y ="285">4</text>
-
+        
                 <text x="235" y ="45">1</text>
                 <text x="235" y ="125"></text>
                 <text x="235" y ="205">3</text>
                 <text x="235" y ="285">5</text>
             </g>
-
+        
             <line x1="80" y1="165" x2="140" y2="165" stroke-width="2" />
             <line x1="120" y1="175" x2="140" y2="165" stroke-width="2" />
             <line x1="120" y1="155" x2="140" y2="165" stroke-width="2" />
