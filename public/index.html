@@ -1,23 +1,82 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="generator" content="GitLab Pages">
-    <title>Plain HTML site using GitLab Pages</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="navbar">
-      <a href="https://pages.gitlab.io/plain-html/">Plain HTML Example</a>
-      <a href="https://gitlab.com/pages/plain-html/">Repository</a>
-      <a href="https://gitlab.com/pages/">Other Examples</a>
-    </div>
 
-    <h1>Hello World!</h1>
+<head>
+    <meta charset="utf-8" />
+    <script src="./download.js"></script>
+    <script src="./pdf-lib.js"></script>
+    <script src="./index.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "./a11yana.css">
+</head>
+
+<body>
+    <h1>Bookletify</h1>
+    <p>Convert a pdf too a printable booklet layout.</p>
+    <p><label><input id="lastpage" type="checkbox" checked="checked"> Last page is a cover page.</label></p>
+    <p><input id="pdf-file" type="file" accept="application/pdf" /></p>
+    <p id="convering" style="visibility: hidden;">Converting...</p>
+
+    <h3>What it does</h3>
 
     <p>
-      This is a simple plain-HTML website on GitLab Pages, without any fancy static site generator.
+        This converter takes a pdf and reorders the pages so it can be printed as a booklet. 
     </p>
-  </body>
-</html>
 
+    <figure style="text-align: center;">
+        <svg fill-opacity="0" stroke="black" height="330" width="270">
+            <g rx="2" stroke-width="2">
+                <rect x="10" y="10" width="50" height="70" />
+                <rect x="10" y="90" width="50" height="70" />
+                <rect x="10" y="170" width="50" height="70" />
+                <rect x="10" y="250" width="50" height="70" />
+
+                <rect x="160" y="10" width="50" height="70" />
+                <rect x="160" y="90" width="50" height="70" />
+                <rect x="160" y="170" width="50" height="70" />
+                <rect x="160" y="250" width="50" height="70" />
+
+                <rect x="210" y="10" width="50" height="70" />
+                <rect x="210" y="90" width="50" height="70" />
+                <rect x="210" y="170" width="50" height="70" />
+                <rect x="210" y="250" width="50" height="70" />
+            </g>
+
+            <g text-anchor="middle" dominant-baseline="middle">
+                <text x="35" y ="45">1</text>
+                <text x="35" y ="125">2</text>
+                <text x="35" y ="205">...</text>
+                <text x="35" y ="285">7</text>
+
+                <text x="185" y ="45">7</text>
+                <text x="185" y ="125">2</text>
+                <text x="185" y ="205">6</text>
+                <text x="185" y ="285">4</text>
+
+                <text x="235" y ="45">1</text>
+                <text x="235" y ="125"></text>
+                <text x="235" y ="205">3</text>
+                <text x="235" y ="285">5</text>
+            </g>
+
+            <line x1="80" y1="165" x2="140" y2="165" stroke-width="2" />
+            <line x1="120" y1="175" x2="140" y2="165" stroke-width="2" />
+            <line x1="120" y1="155" x2="140" y2="165" stroke-width="2" />
+        </svg>
+        <figcaption>Example conversion of a 7 page pdf with last page as a cover page.</figcaption>
+    </figure>
+
+    <p>
+        Note that a booklet always has a multiple of 4 pages.
+        If the pdf does not have a multiple of 4 pages the resulting booklet will have empty pages.
+        These empty pages will be inserted at the end of the pdf. 
+        Should the last page be a cover you can set the above checkmark to ensure these empty pages will be inserted before the cover page.
+    </p>
+
+    <h3>About</h3>
+    This page and its <a href="https://gitlab.com/wieke/bookletify">source</a> is hosted on gitlab. 
+    It is based on the <a href="https://pdf-lib.js.org/">pdf-lib</a> and <a href="http://danml.com/download.html">download</a> libraries, as well as the <a href="https://github.com/alexandersandberg/a11yana">a11yana</a> drop-in style.
+</body>
+
+<script>
+    document.getElementById("pdf-file").addEventListener('input', convert);
+</script>
+</html>
