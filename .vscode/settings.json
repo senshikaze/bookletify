@@ -1,6 +1,7 @@
 {
     "files.exclude": {
         "build/": true,
-        ".vscode/": true
+        ".vscode/": true,
+        "package-lock.json": true
     }
 }
