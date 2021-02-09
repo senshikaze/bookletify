@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [1.1.2] - 2021-02-09
+
+### Changed
+
+ - Altered the order and wording of the options a bit.
+
 ## [1.1.1] - 2021-02-09
 
 ### Fixed
