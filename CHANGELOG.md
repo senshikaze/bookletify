@@ -2,8 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2021-02-09
 
-## [1.1.0] - 2021-02-08
+### Fixed
+
+ - Fixed margin on progress bar.
+
+## [1.1.0] - 2021-02-09
 
 ### Added
 
