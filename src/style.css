@@ -1,0 +1,36 @@
+.animated {
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+}
+
+.hidden-start {
+    transform: translate(0px, -20px);
+    opacity: 0;
+}
+
+.appeared {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.hidden-end {
+    transform: translate(0px, 20px);
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    font-style: italic;
+    color: var(--theme);
+}
+
+.progress {
+    padding-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
