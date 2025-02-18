@@ -61,7 +61,8 @@ async function loadData() {
             parameters: {
                 lastpage: document.getElementById("lastpage").checked,
                 insertafterfront: document.getElementById("insertafterfront").checked,
-                insertbeforeback: document.getElementById("insertbeforeback").checked
+                insertbeforeback: document.getElementById("insertbeforeback").checked,
+                chunkSize: Number.parseInt(document.getElementById("chunkSize").value) ?? null,
             },
         };
     }
