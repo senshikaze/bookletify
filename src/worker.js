@@ -26,7 +26,7 @@ onmessage = async function (e) {
         while (curr < pageCount) {
           let pages = extract_reversed_order_pages(pdf, chunkSize, curr);
           await convert(pdf, pages, newPDF);
-          curr = (curr + chunkSize) + 1;
+          curr = curr + chunkSize;
         }
       } else {
         let pages = extract_reversed_order_pages(pdf);
@@ -147,7 +147,7 @@ function extract_reversed_order_pages(pdf, count = 0, start = 0) {
   let forward = [];
   let backward = [];
 
-  for(i = Math.max(0, start - 1); i < Math.min(n, start + count); i++) {
+  for(i = start; i < Math.min(n, start + count); i++) {
     forward.push({page: pdf.getPage(i), index: i});
   }
 
